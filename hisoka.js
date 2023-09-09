@@ -1299,7 +1299,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
         })
         }
         break
-	    case 'play': case 'ytplay': {
+	    case 'GF': case 'GT': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
