@@ -1191,15 +1191,6 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             hisoka.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
-            case 'toaku': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await hisoka.downloadMediaMessage(qmsg)
-            let { toAudio } = require('./lib/converter')
-            let audio = await toAudio(media, 'mp4')
-            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${hisoka.user.name}.mp3`}, { quoted : m })
-            }
-            break
             case 'tovn': case 'toptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
@@ -2069,7 +2060,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     m.reply(`\`\`\`Kamu Sedang Tidak Berada Di Sesi Anonymous, Ketik ${prefix}start Untuk Mencari Partner \`\`\``)
                     throw false
                 }
-                m.reply('Ok')
+                m.reply('oke sayang')
                 let other = room.other(m.sender)
                 if (other) await hisoka.sendText(other, `\`\`\`Partner Telah Meninggalkan Sesi Anonymous\`\`\``, m)
                 delete db.data.anonymous[room.id]
